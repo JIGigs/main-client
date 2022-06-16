@@ -12,21 +12,35 @@ module.exports = {
       },
       colors: {
         jig : {
-          100: '#93c69e',
-          200: '#83be90',
-          300: '#74b682',
-          400: '#64ae74',
-          500: '#5a9d68',
-          600: '#508b5d',
-          700: '#467a51',
-          800: '#3c6846',
-          900: '#32573a',
+          100: '#x',
+          200: '#69788C',
+          300: '#6A87A1',
+          400: '#2C76DC',
+          500: '#0F284A',
+          600: '#082144',
         },
       },
       fontFamily: {
         body: ['Poppins', 'sans-serif'],
       },
     },
+  },
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          "primary": "#2C76DC",
+          "secondary": "#69788C",
+          "accent": "#6A87A1",
+          "neutral": "#2A303C",
+          "base-100": "#FCFCFC",
+          "info": "#CCEDFF",
+          "success": "#36D399",
+          "warning": "#FBBD23",
+          "error": "#F87272",
+        },
+      },
+    ],
   },
   plugins: [require("daisyui")],
 }
