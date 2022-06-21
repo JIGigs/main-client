@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react';
+import { Url } from 'url';
 
-export interface NavLinks {
-    link?: string;
-    label: string;
-    icon?: React.ReactNode;
-    selected?: boolean;
+export interface NavLink {
+  link: Url;
+  label: string;
+  icon?: React.ReactNode;
+  selected?: boolean;
+  nested?: NavLink[];
 }
 
 export interface User {
-    name: string;
-    email: string;
-    photoUrl?: string; 
+  name: string;
+  email: string;
+  photoUrl?: string;
 }
