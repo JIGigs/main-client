@@ -1,11 +1,11 @@
 import React from 'react';
-import { Header, Navbar, SideNav } from '../components';
-import { NavLinks, User } from '../utilities';
+import { Header, Navbar, MobileNav } from '../components';
+import { NavLink, User } from '../utilities';
 
 interface Props {
   children: React.ReactNode;
   user?: User;
-  navLinks?: NavLinks;
+  navLinks?: NavLink[];
   pageTitle?: string;
 }
 
@@ -21,10 +21,10 @@ export const MainLayout: React.FC<Props> = ({
       <div className='drawer drawer-end'>
         <input id='my-drawer-4' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content'>
-          <Navbar user={user} />
+          <Navbar user={user} navLinks={navLinks} />
         </div>
         <div className='drawer-side'>
-          <SideNav user={user} />
+          <MobileNav user={user} navLinks={navLinks} />
         </div>
       </div>
       <main>{children}</main>

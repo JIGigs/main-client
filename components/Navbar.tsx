@@ -1,8 +1,5 @@
-import Link from 'next/link';
 import React from 'react';
-import { Url } from 'url';
 import { NavLink, User } from '../utilities';
-import { AppLink } from './AppLink';
 import { Logo } from './Logo';
 import { NavItem } from './NavItem';
 

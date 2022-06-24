@@ -19,7 +19,7 @@ export const NavItem: React.FC<Links> = ({ navLinks }) => {
                 <ul className='p-2 bg-jig-500'>
                   {nav.nested.map((nest, i) => (
                     <li key={i}>
-                      <Link href={nest.link}>
+                      <Link href={'nest.link'}>
                         <AppLink nav={nest} />
                       </Link>
                     </li>
