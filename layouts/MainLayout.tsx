@@ -16,19 +16,19 @@ export const MainLayout: React.FC<Props> = ({
   navLinks,
 }) => {
   return (
-    <div>
+    <div className='font-body'>
       <Header pageTitle={pageTitle} />
       <div className='drawer drawer-end'>
         <input id='my-drawer-4' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content'>
-          <Navbar user={user} navLinks={navLinks} />
+          <Navbar user={user} />
+          <main>{children}</main>
+          <footer></footer>
         </div>
         <div className='drawer-side'>
           <MobileNav user={user} navLinks={navLinks} />
         </div>
       </div>
-      <main>{children}</main>
-      <footer></footer>
     </div>
   );
 };
