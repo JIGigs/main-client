@@ -11,17 +11,19 @@ module.exports = {
         xs: '480px',
       },
       colors: {
-        jig : {
+        jig: {
           100: '#x',
           200: '#69788C',
           300: '#6A87A1',
           400: '#2C76DC',
           500: '#0F284A',
           600: '#082144',
+          700: '#235eb0',
+          800: '#5691e3',
         },
       },
       fontFamily: {
-        body: ['Poppins', 'sans-serif'],
+        body: ['INTER', 'sans-serif'],
       },
     },
   },
