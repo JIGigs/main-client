@@ -8,7 +8,7 @@ interface Props {
   navLinks?: React.ReactNode;
 }
 
-export const Navbar: React.FC<Props> = ({ user, navLinks }) => {
+export const Navbar: React.FC<Props> = ({ user }) => {
   return (
     <div className='bg-jig-500 text-gray-200'>
       <nav className='max-w-7xl mx-auto navbar'>

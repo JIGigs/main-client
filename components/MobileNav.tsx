@@ -81,17 +81,17 @@ export const MobileNav: React.FC<Props> = ({ user }) => {
               hideDropdown && 'hidden'
             }`}
           >
-            <li onClick={handleSubmenu}>
+            <li>
               <Link href='/career/advice'>
                 <a>Career Adivce</a>
               </Link>
             </li>
-            <li onClick={handleSubmenu}>
+            <li>
               <Link href='/career/hr-news'>
                 <a>HR News</a>
               </Link>
             </li>
-            <li onClick={handleSubmenu}>
+            <li>
               <Link href='/career/training'>
                 <a>Training Events</a>
               </Link>

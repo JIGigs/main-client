@@ -26,7 +26,7 @@ export const MainLayout: React.FC<Props> = ({
           <footer></footer>
         </div>
         <div className='drawer-side'>
-          <MobileNav user={user} navLinks={navLinks} />
+          <MobileNav user={user} />
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ const Home: NextPage = () => {
   ];
   return (
     <MainLayout navLinks={navs}>
-      <h1 className='text-3xl'>Aaron Mensah</h1>
+      <h1 className='text-3xl'>Home</h1>
     </MainLayout>
   );
 };
