@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Navbar, MobileNav } from '../components';
+import { Header, Navbar, MobileNav, Footer } from '../components';
 import { NavLink, User } from '../utilities';
 
 interface Props {
@@ -23,7 +23,7 @@ export const MainLayout: React.FC<Props> = ({
         <div className='drawer-content'>
           <Navbar user={user} />
           <main>{children}</main>
-          <footer></footer>
+          <Footer />
         </div>
         <div className='drawer-side'>
           <MobileNav user={user} />
