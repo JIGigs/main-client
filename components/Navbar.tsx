@@ -36,17 +36,17 @@ export const Navbar: React.FC<Props> = ({ user }) => {
           </label>
           <ul className='menu menu-horizontal p-0 hidden lg:flex font-body'>
             <ul className='menu menu-horizontal p-0'>
-              <li className='hover:bg-jig-600 font-semibold'>
+              <li className='hover:bg-jig-900 font-semibold'>
                 <Link href='/jobs'>
                   <a>Jobs</a>
                 </Link>
               </li>
-              <li className='hover:bg-jig-600 font-semibold'>
+              <li className='hover:bg-jig-900 font-semibold'>
                 <Link href='/services'>
                   <a>Services</a>
                 </Link>
               </li>
-              <li className='hover:bg-jig-600 font-semibold'>
+              <li className='hover:bg-jig-900 font-semibold'>
                 <Link href='/courses'>
                   <a>Courses</a>
                 </Link>
@@ -65,17 +65,17 @@ export const Navbar: React.FC<Props> = ({ user }) => {
                   </svg>
                 </a>
                 <ul className='p-2 bg-jig-500 font-semibold'>
-                  <li className='hover:bg-jig-600'>
+                  <li className='hover:bg-jig-900'>
                     <Link href='/career/advice'>
                       <a>Career Adivce</a>
                     </Link>
                   </li>
-                  <li className='hover:bg-jig-600'>
+                  <li className='hover:bg-jig-900'>
                     <Link href='/career/hr-news'>
                       <a>HR News</a>
                     </Link>
                   </li>
-                  <li className='hover:bg-jig-600'>
+                  <li className='hover:bg-jig-900'>
                     <Link href='/career/training'>
                       <a>Training Events</a>
                     </Link>

@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import { MainLayout } from '../layouts';
-import { NavLink } from '../utilities';
 
 const Signup: NextPage = () => {
   return (
