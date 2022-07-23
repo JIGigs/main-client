@@ -12,7 +12,7 @@ module.exports = {
       },
       colors: {
         jig: {
-          100: '#x',
+          100: '#CCEDFF',
           200: '#69788C',
           300: '#6A87A1',
           400: '#2C76DC',

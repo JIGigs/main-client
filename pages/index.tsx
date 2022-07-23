@@ -1,47 +1,160 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
+import { RadioBtn } from '../components';
+import { useForm } from '../hooks';
 import { MainLayout } from '../layouts';
-import { NavLink } from '../utilities';
 
 const Home: NextPage = () => {
-  const navs: NavLink[] = [
-    {
-      link: '/jobs',
-      label: 'Jobs',
-      selected: false,
-    },
-    {
-      link: '/services',
-      label: 'Services',
-      selected: false,
-    },
-    {
-      link: '/courses',
-      label: 'Courses',
-      selected: false,
-    },
-    {
-      link: '/career',
-      label: 'Career Resources',
-      selected: false,
-      nested: [
-        {
-          link: '/career/advice',
-          label: 'Career Advice',
-        },
-        {
-          link: '/career/hr-news',
-          label: 'HR News',
-        },
-        {
-          link: '/career/training',
-          label: 'Training Event',
-        },
-      ],
-    },
-  ];
+  const [values, handleChange] = useForm({
+    keywords: '',
+    remote: '',
+    partTime: '',
+    fullTime: '',
+  });
+
   return (
-    <MainLayout navLinks={navs}>
-      <h1 className='text-3xl'>Home</h1>
+    <MainLayout>
+      <>
+        <section className='bg-jig-500 py-20 text-gray-100'>
+          <div className='max-w-7xl mx-auto p-5'>
+            <h1 className='font-semibold text-2xl mb-10'>Find your next job</h1>
+            <div className='flex flex-row mb-5'>
+              <input
+                type='text'
+                placeholder='Type here'
+                className='input input-bordered w-full bg-jig-300 sm:mr-16'
+                name='keywords'
+                value={values.keywords}
+                onChange={(e) => handleChange}
+              />
+              <Link href={'#'}>
+                <a className='hidden sm:flex btn btn-outline text-gray-100 border-jig-200 hover:border-gray-300 hover:bg-transparent px-10 py-0 normal-case'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-6 w-6'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+                    />
+                  </svg>
+                  <span className='ml-2'>Search</span>
+                </a>
+              </Link>
+            </div>
+            <div className='flex'>
+              <div className='form-control flex-row'>
+                <RadioBtn
+                  name='remote'
+                  label='Remote'
+                  value={values.remote}
+                  classes='mr-4'
+                  onChange={(e) => handleChange}
+                />
+                <RadioBtn
+                  name='partTime'
+                  label='Part-time'
+                  value={values.partTime}
+                  classes='mr-4'
+                  onChange={(e) => handleChange}
+                />
+                <RadioBtn
+                  name='fullTime'
+                  label='Full-time'
+                  value={values.fullTime}
+                  classes='mr-4'
+                  onChange={(e) => handleChange}
+                />
+              </div>
+              <div className='grow'></div>
+
+              <Link href={'#'}>
+                <a className='hidden sm:flex items-center btn btn-link normal-case text-gray-100 -mr-3 md:mr-12'>
+                  <span className='mr-2'>Browse all jobs</span>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-5 w-5'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                  >
+                    <path
+                      fillRule='evenodd'
+                      d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
+                      clipRule='evenodd'
+                    />
+                  </svg>
+                </a>
+              </Link>
+              <a className='hidden md:flex md:invisible btn btn-outline text-gray-100 border-jig-200 hover:border-gray-300 hover:bg-transparent px-10 py-0 normal-case'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+                  />
+                </svg>
+                <span className='ml-2'>Search</span>
+              </a>
+            </div>
+            <div className='sm:hidden mt-10'>
+              <div className='flex justify-end'>
+                <Link href={'#'}>
+                  <a className='btn btn-outline text-gray-100 w-full border-jig-200 hover:border-gray-300 hover:bg-transparent normal-case'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='h-6 w-6'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+                      />
+                    </svg>
+                    <span className='ml-2'>Search</span>
+                  </a>
+                </Link>
+              </div>
+              <div className='flex justify-end'>
+                <Link href={'#'}>
+                  <a className='items-center btn btn-link normal-case text-gray-100 -mr-4 text-xs'>
+                    <span className='mr-2'>Browse all jobs</span>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      className='h-5 w-5'
+                      viewBox='0 0 20 20'
+                      fill='currentColor'
+                    >
+                      <path
+                        fillRule='evenodd'
+                        d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
+                        clipRule='evenodd'
+                      />
+                    </svg>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className='bg-jig-100 py-20'></section>
+        <section className='py-20'></section>
+      </>
     </MainLayout>
   );
 };
