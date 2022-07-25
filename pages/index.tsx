@@ -107,7 +107,7 @@ const Home: NextPage = () => {
               </div>
               <div className='grow'></div>
 
-              <Link href={'#'}>
+              <Link href={'/jobs'}>
                 <a className='hidden sm:flex items-center btn btn-link normal-case text-gray-100 -mr-3 md:mr-12'>
                   <span className='mr-2'>Browse all jobs</span>
                   <svg
@@ -165,7 +165,7 @@ const Home: NextPage = () => {
                 </Link>
               </div>
               <div className='flex justify-end'>
-                <Link href={'#'}>
+                <Link href={'/jobs'}>
                   <a className='items-center btn btn-link normal-case text-gray-100 -mr-4 text-xs'>
                     <span className='mr-2'>Browse all jobs</span>
                     <svg
