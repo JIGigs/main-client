@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { User } from '../utilities';
+import { User } from '../types';
 import { Logo } from './Logo';
 
 interface Props {
@@ -84,14 +84,14 @@ export const Navbar: React.FC<Props> = ({ user }) => {
               </li>
               <li className='m-1 mx-2'>
                 <Link href={'/employers/login'}>
-                  <a className='btn btn-outline border-jig-200 hover:border-gray-700 hover:bg-transparent px-6 py-0'>
+                  <a className='btn btn-outline border-jig-200 hover:border-gray-700 hover:bg-transparent px-6 py-0 normal-case'>
                     Employers
                   </a>
                 </Link>
               </li>
               <li className='m-1 mx-2'>
                 <Link href={'/login'}>
-                  <a className='btn bg-jig-400 hover:bg-jig-700 px-10 py-0'>
+                  <a className='btn bg-jig-400 hover:bg-jig-700 px-10 py-0 normal-case'>
                     Login
                   </a>
                 </Link>
