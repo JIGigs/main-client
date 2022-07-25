@@ -26,7 +26,7 @@ export const Categories: HomeTabListItem[] = [
     link: '/jobs?categories=maintenance',
   },
   {
-    label: 'Medical/Pharmaceutical',
+    label: 'Medical / Pharmaceutical',
     link: '/jobs?categories=medical',
   },
   {
@@ -38,7 +38,7 @@ export const Categories: HomeTabListItem[] = [
     link: '/jobs?categories=project-development',
   },
   {
-    label: 'Sales/Business Development',
+    label: 'Sales / Business Development',
     link: '/jobs?categories=sales',
   },
   {
@@ -46,11 +46,11 @@ export const Categories: HomeTabListItem[] = [
     link: '/jobs?categories=stores',
   },
   {
-    label: 'Architecture/Construction/Real Estate',
+    label: 'Architecture / Construction / Real Estate',
     link: '/jobs?categories=real-estate',
   },
   {
-    label: 'Driving/Transportation',
+    label: 'Driving / Transportation',
     link: '/jobs?categories=transportation',
   },
   {
@@ -62,11 +62,11 @@ export const Categories: HomeTabListItem[] = [
     link: '/jobs?categories=international-development',
   },
   {
-    label: 'Management/Administration',
+    label: 'Management / Administration',
     link: '/jobs?categories=administration',
   },
   {
-    label: 'Mining/Petroleum',
+    label: 'Mining / Petroleum',
     link: '/jobs?categories=petroleum',
   },
   {
@@ -90,7 +90,7 @@ export const Categories: HomeTabListItem[] = [
     link: '/jobs?categories=administrative',
   },
   {
-    label: 'Automotive/Machinery/Aviation',
+    label: 'Automotive / Machinery / Aviation',
     link: '/jobs?categories=automotive',
   },
   {
@@ -166,7 +166,7 @@ export const Categories: HomeTabListItem[] = [
     link: '/jobs?categories=retail',
   },
   {
-    label: 'Sports/Fitness',
+    label: 'Sports / Fitness',
     link: '/jobs?categories=sports',
   },
 ];
@@ -177,7 +177,7 @@ export const Industry: HomeTabListItem[] = [
     link: '/jobs?industry=administrative',
   },
   {
-    label: 'Catering/Food Service',
+    label: 'Catering / Food Service',
     link: '/jobs?industry=catering',
   },
   {
@@ -221,7 +221,7 @@ export const Industry: HomeTabListItem[] = [
     link: '/jobs?industry=electronics',
   },
   {
-    label: 'Hospitality/Travel/Tourism',
+    label: 'Hospitality / Travel/Tourism',
     link: '/jobs?industry=hospitality',
   },
   {
@@ -233,7 +233,7 @@ export const Industry: HomeTabListItem[] = [
     link: '/jobs?industry=marketing',
   },
   {
-    label: 'NGO/IGO/INGO',
+    label: 'NGO / IGO / INGO',
     link: '/jobs?industry=ngo',
   },
   {
