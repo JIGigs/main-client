@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
-import { RadioBtn, Tab } from '../components';
+import { RadioBtn, SpecialButton, Tab } from '../components';
 import { HomeTabList } from '../components/HomeTabList';
 import { useForm } from '../hooks';
 import { MainLayout } from '../layouts';
-import { Categories, Industry, TabItem } from '../utilities';
+import { HomeTabListItem, TabItem } from '../types';
+import { Categories, Industry } from '../utilities';
 
 const Home: NextPage = () => {
   const [values, handleChange] = useForm({
@@ -22,6 +24,25 @@ const Home: NextPage = () => {
     {
       label: 'By Industry',
       component: <HomeTabList contentList={Industry} />,
+    },
+  ];
+
+  const specialButtons: HomeTabListItem[] = [
+    {
+      label: 'Get career advice',
+      link: '/career/advice',
+    },
+    {
+      label: 'Explore training events',
+      link: '/career/training',
+    },
+    {
+      label: 'Take some courses',
+      link: '/courses',
+    },
+    {
+      label: 'Entry level jobs',
+      link: '/jobs?sort=entry-level',
     },
   ];
 
@@ -166,11 +187,29 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className='bg-jig-100 py-20'>
-          <div className='max-w-7xl mx-auto p-5'>
+          <div className='max-w-7xl mx-auto p-5 mb-5'>
             <Tab tabItems={tabItems} />
           </div>
         </section>
-        <section className='py-20'></section>
+        <section className='py-20'>
+          <div className='max-w-7xl mx-auto p-5 mb-5'>
+            <h2>New Graduate? Start here</h2>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+              <Image
+                alt=''
+                src={'/images/new-grad.svg'}
+                layout='intrinsic'
+                width={400}
+                height={400}
+              />
+              <div className='mx-auto w-5/6 mt-16'>
+                {specialButtons.map(({ label, link }, i) => (
+                  <SpecialButton key={i} label={label} url={link} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </>
     </MainLayout>
   );

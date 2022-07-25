@@ -7,4 +7,5 @@ export * from './Navbar';
 export * from './NavItem';
 export * from './MobileNav';
 export * from './RadioBtn';
+export * from './SpecialButton';
 export * from './Tab';

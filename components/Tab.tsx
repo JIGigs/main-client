@@ -22,7 +22,7 @@ export const Tab = ({ tabItems }: Props) => {
             key={i}
             className={
               isActive === i
-                ? 'tab tab-bordered tab-active text-loya-500 font-medium'
+                ? 'tab tab-bordered tab-active text-jig-400 font-medium'
                 : 'tab tab-bordered'
             }
             onClick={() => handleClick(item, i)}
@@ -32,7 +32,7 @@ export const Tab = ({ tabItems }: Props) => {
         ))}
         {/* <li className='tab tab-bordered flex-1 cursor-default' /> */}
       </div>
-      <div className='mt-6 mx-4'>{currentTabItem?.component}</div>
+      <div className='mt-6'>{currentTabItem?.component}</div>
     </>
   );
 };
