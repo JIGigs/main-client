@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Navbar, MobileNav, Footer } from '../components';
-import { NavLink, User } from '../utilities';
+import { NavLink, User } from '../types';
 
 interface Props {
   children: React.ReactNode;

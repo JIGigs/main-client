@@ -1,5 +1,4 @@
 import React from 'react';
-import { Url } from 'url';
 
 export interface NavLink {
   link: string;
@@ -13,4 +12,14 @@ export interface User {
   name: string;
   email: string;
   photoUrl?: string;
+}
+
+export interface TabItem {
+  label: string;
+  component: React.ReactNode;
+}
+
+export interface HomeTabListItem {
+  label: string;
+  link: string;
 }
