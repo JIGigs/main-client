@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { User } from '../utilities';
+import { User } from '../types';
 import { Logo } from './Logo';
 
 interface Props {

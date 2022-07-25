@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { NavLink, User } from '../utilities';
+import { User } from '../types';
 import { AppLink } from './AppLink';
 import { Avatar } from './Avatar';
 

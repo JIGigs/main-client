@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { NavLink } from '../utilities';
+import { NavLink } from '../types';
 import { AppLink } from './AppLink';
 
 interface Links {

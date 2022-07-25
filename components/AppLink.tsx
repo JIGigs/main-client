@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from '../utilities';
+import { NavLink } from '../types';
 
 interface Props {
   nav: NavLink;
