@@ -1,8 +1,10 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import { RadioBtn } from '../components';
+import { RadioBtn, Tab } from '../components';
+import { HomeTabList } from '../components/HomeTabList';
 import { useForm } from '../hooks';
 import { MainLayout } from '../layouts';
+import { Categories, Industry, TabItem } from '../utilities';
 
 const Home: NextPage = () => {
   const [values, handleChange] = useForm({
@@ -11,6 +13,17 @@ const Home: NextPage = () => {
     partTime: '',
     fullTime: '',
   });
+
+  const tabItems: TabItem[] = [
+    {
+      label: 'By Category',
+      component: <HomeTabList contentList={Categories} />,
+    },
+    {
+      label: 'By Industry',
+      component: <HomeTabList contentList={Industry} />,
+    },
+  ];
 
   return (
     <MainLayout>
@@ -152,7 +165,11 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
-        <section className='bg-jig-100 py-20'></section>
+        <section className='bg-jig-100 py-20'>
+          <div className='max-w-7xl mx-auto p-5'>
+            <Tab tabItems={tabItems} />
+          </div>
+        </section>
         <section className='py-20'></section>
       </>
     </MainLayout>
