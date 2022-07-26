@@ -3,6 +3,7 @@ interface IRadioBtn {
   label: string;
   checked?: boolean;
   classes?: string;
+  gray?: boolean;
   value?: string;
   disabled?: boolean;
   onChange?: (event: any) => void;
@@ -13,6 +14,7 @@ export const RadioBtn = ({
   label,
   checked = false,
   classes,
+  gray = false,
   value,
   disabled = false,
   ...props
@@ -28,9 +30,11 @@ export const RadioBtn = ({
         checked={checked}
         value={value}
         disabled={disabled}
-        className='checkbox border-gray-100 rounded-none w-4 h-4'
+        className={`checkbox ${gray && 'border-gray-100'} rounded-none w-4 h-4`}
       />
-      <span className='label-text text-gray-100 pl-3'>{label}</span>
+      <span className={`label-text ${gray && 'text-gray-100'} pl-3`}>
+        {label}
+      </span>
     </label>
   );
 };
