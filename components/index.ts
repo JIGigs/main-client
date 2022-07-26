@@ -1,6 +1,6 @@
 export * from './AppLink';
 export * from './Avatar';
-export * from './Card';
+export * from './Cards';
 export * from './Footer';
 export * from './Header';
 export * from './Logo';

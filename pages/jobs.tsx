@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Card } from '../components';
+import { FilterCard, JobCard, RadioBtn } from '../components';
 import { MainLayout } from '../layouts';
 
 const Jobs: NextPage = () => {
@@ -87,8 +87,41 @@ const Jobs: NextPage = () => {
                 </svg>
                 <span className='ml-2'>Filter jobs</span>
               </div>
-              <div className='mt-5'>
-                <Card />
+              <div className='mt-5 grid grid-flow-row gap-4'>
+                <FilterCard title='Date Posted'>
+                  <RadioBtn name='anytime' label='Anytime' />
+                  <RadioBtn name='today' label='Today' />
+                  <RadioBtn name='last14days' label='Last 14 days' />
+                  <RadioBtn name='last30days' label='Last 30 days' />
+                </FilterCard>
+                <FilterCard title='Type'>
+                  <RadioBtn name='all' label='All' />
+                  <RadioBtn name='remote' label='Remote' />
+                  <RadioBtn name='parttime' label='Part-time' />
+                  <RadioBtn name='fulltime' label='Full-time' />
+                </FilterCard>
+                <FilterCard title='Salaray (monthly)'>
+                  <div className='form-control w-full max-w-xs flex-row'>
+                    <label className='label'>
+                      <span className='label-text mr-3'>From</span>
+                    </label>
+                    <input
+                      type='text'
+                      placeholder=''
+                      className='input input-bordered w-full max-w-xs'
+                    />
+                  </div>
+                  <div className='form-control w-full max-w-xs flex-row'>
+                    <label className='label'>
+                      <span className='label-text mr-7'>To</span>
+                    </label>
+                    <input
+                      type='text'
+                      placeholder=''
+                      className='input input-bordered w-full max-w-xs'
+                    />
+                  </div>
+                </FilterCard>
               </div>
             </div>
             <div className='md:col-span-2'>
@@ -136,7 +169,7 @@ const Jobs: NextPage = () => {
                 </div>
               </div>
               <div className='mt-5'>
-                <Card />
+                <JobCard />
               </div>
             </div>
           </div>

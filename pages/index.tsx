@@ -88,6 +88,7 @@ const Home: NextPage = () => {
                   label='Remote'
                   value={values.remote}
                   classes='mr-4'
+                  gray
                   onChange={(e) => handleChange}
                 />
                 <RadioBtn
@@ -95,6 +96,7 @@ const Home: NextPage = () => {
                   label='Part-time'
                   value={values.partTime}
                   classes='mr-4'
+                  gray
                   onChange={(e) => handleChange}
                 />
                 <RadioBtn
@@ -102,6 +104,7 @@ const Home: NextPage = () => {
                   label='Full-time'
                   value={values.fullTime}
                   classes='mr-4'
+                  gray
                   onChange={(e) => handleChange}
                 />
               </div>
