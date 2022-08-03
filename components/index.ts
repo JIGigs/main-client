@@ -3,6 +3,7 @@ export * from './Avatar';
 export * from './Cards';
 export * from './Footer';
 export * from './Header';
+export * from './JobFilterContent';
 export * from './Logo';
 export * from './Navbar';
 export * from './NavItem';

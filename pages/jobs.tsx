@@ -1,11 +1,18 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FilterCard, JobCard, RadioBtn } from '../components';
+import { JobCard, JobFilterContent } from '../components';
 import { MainLayout } from '../layouts';
 
 const Jobs: NextPage = () => {
   const [sortValue, setSortValue] = useState('Date');
+  const [showFilterForm, setShowFilterForm] = useState(false);
+
+  const showFilter = () => {
+    setShowFilterForm(!showFilterForm);
+    console.log('yess');
+  };
+
   return (
     <MainLayout>
       <section className='bg-jig-500 py-20 text-gray-100'>
@@ -69,7 +76,7 @@ const Jobs: NextPage = () => {
       <section className='py-20'>
         <div className='max-w-7xl mx-auto p-5 mb-5'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            <div className='md:col-span-1'>
+            <div className='hidden md:block md:col-span-1'>
               <div className='flex'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -82,50 +89,38 @@ const Jobs: NextPage = () => {
                   <path
                     strokeLinecap='round'
                     strokeLinejoin='round'
-                    d='M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z'
+                    d='M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4'
                   />
                 </svg>
                 <span className='ml-2'>Filter jobs</span>
               </div>
-              <div className='mt-5 grid grid-flow-row gap-4'>
-                <FilterCard title='Date Posted'>
-                  <RadioBtn name='anytime' label='Anytime' />
-                  <RadioBtn name='today' label='Today' />
-                  <RadioBtn name='last14days' label='Last 14 days' />
-                  <RadioBtn name='last30days' label='Last 30 days' />
-                </FilterCard>
-                <FilterCard title='Type'>
-                  <RadioBtn name='all' label='All' />
-                  <RadioBtn name='remote' label='Remote' />
-                  <RadioBtn name='parttime' label='Part-time' />
-                  <RadioBtn name='fulltime' label='Full-time' />
-                </FilterCard>
-                <FilterCard title='Salaray (monthly)'>
-                  <div className='form-control w-full max-w-xs flex-row'>
-                    <label className='label'>
-                      <span className='label-text mr-3'>From</span>
-                    </label>
-                    <input
-                      type='text'
-                      placeholder=''
-                      className='input input-bordered w-full max-w-xs'
-                    />
-                  </div>
-                  <div className='form-control w-full max-w-xs flex-row'>
-                    <label className='label'>
-                      <span className='label-text mr-7'>To</span>
-                    </label>
-                    <input
-                      type='text'
-                      placeholder=''
-                      className='input input-bordered w-full max-w-xs'
-                    />
-                  </div>
-                </FilterCard>
+              <div className='grid grid-flow-row mt-5 gap-4'>
+                <JobFilterContent />
               </div>
             </div>
+
             <div className='md:col-span-2'>
-              <div className='flex justify-end'>
+              <div className='flex justify-between md:justify-end items-center'>
+                <button
+                  className='md:hidden btn btn-ghost normal-case'
+                  onClick={() => showFilter()}
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-6 w-6 stroke-jig-400'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4'
+                    />
+                  </svg>
+                  <span className='ml-2'>Filter jobs</span>
+                </button>
                 <div className='dropdown md:dropdown-hover dropdown-end'>
                   <label tabIndex={0} className='flex items-center'>
                     <span>
@@ -167,6 +162,16 @@ const Jobs: NextPage = () => {
                     </li>
                   </ul>
                 </div>
+              </div>
+              <div
+                className={`${
+                  showFilterForm ? 'block' : 'hidden'
+                } md:hidden md:col-span-1`}
+              >
+                <div className='grid grid-flow-row mt-5 gap-4'>
+                  <JobFilterContent />
+                </div>
+                <hr className='mt-6 border border-jig-100' />
               </div>
               <div className='mt-5'>
                 <JobCard />

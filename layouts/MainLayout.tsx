@@ -22,7 +22,7 @@ export const MainLayout: React.FC<Props> = ({
         <input id='my-drawer-4' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content'>
           <Navbar user={user} />
-          <main>{children}</main>
+          <main className='bg-slate-100'>{children}</main>
           <Footer />
         </div>
         <div className='drawer-side'>
