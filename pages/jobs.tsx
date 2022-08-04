@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { JobCard, JobFilterContent } from '../components';
@@ -174,7 +175,7 @@ const Jobs: NextPage = () => {
                 <hr className='mt-6 border border-jig-100' />
               </div>
               <div className='mt-5'>
-                <JobCard />
+                <JobCard image={'https://africaneyereport.com/wp-content/uploads/2016/11/ecg-ghana-300x300.jpg'} />
               </div>
             </div>
           </div>

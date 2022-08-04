@@ -11,3 +11,4 @@ export * from './MobileNav';
 export * from './RadioBtn';
 export * from './SpecialButton';
 export * from './Tab';
+export * from './Text';

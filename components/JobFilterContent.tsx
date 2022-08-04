@@ -15,6 +15,7 @@ export const JobFilterContent = () => {
         <RadioBtn name='remote' label='Remote' />
         <RadioBtn name='parttime' label='Part-time' />
         <RadioBtn name='fulltime' label='Full-time' />
+        <RadioBtn name='contruct' label='Contract' />
       </FilterCard>
       <FilterCard title='Salaray (monthly)'>
         <div className='form-control w-full max-w-xs flex-row'>
