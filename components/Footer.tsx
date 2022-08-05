@@ -212,7 +212,7 @@ export const Footer = () => {
             <p className='flex justify-center'>
               &copy; 2005 - {new Date().getFullYear()}{' '}
               <Link href='/'>
-                <a className='ml-2 hover:text-gray-400'>Jobsinghana.com,</a>
+                <a className='ml-2 hover:text-gray-400!'>Jobsinghana.com,</a>
               </Link>
             </p>
             <div className='flex justify-center'>LLC. All rights reserved.</div>
