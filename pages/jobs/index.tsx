@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { JobCard, JobFilterContent } from '../components';
-import { MainLayout } from '../layouts';
+import { JobCard, JobFilterContent } from '../../components';
+import { MainLayout } from '../../layouts';
 
 const Jobs: NextPage = () => {
   const [sortValue, setSortValue] = useState('Date');
@@ -175,7 +175,19 @@ const Jobs: NextPage = () => {
                 <hr className='mt-6 border border-jig-100' />
               </div>
               <div className='mt-5'>
-                <JobCard image={'https://africaneyereport.com/wp-content/uploads/2016/11/ecg-ghana-300x300.jpg'} />
+                <JobCard
+                  id='t9ady1245texpw5'
+                  type='Contract'
+                  location='Dodowa'
+                  datePosted='05-Aug-2022'
+                  expectedSalary='4000'
+                  dateExpires='01-Sep-2022'
+                  description='At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'
+                  title='Procurement Officer'
+                  image={
+                    'https://africaneyereport.com/wp-content/uploads/2016/11/ecg-ghana-300x300.jpg'
+                  }
+                />
               </div>
             </div>
           </div>
