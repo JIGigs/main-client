@@ -8,20 +8,96 @@ export const JobFilterContent = () => {
   const [salaryFrom, setSalaryFrom] = useState('');
   const [salaryTo, setSalaryTo] = useState('');
 
+  const handleJobTypeChecks = (_event: React.ChangeEvent<HTMLInputElement>) => {
+    const index = datePosted.indexOf(_event.target.value);
+    if (index === -1) {
+      setDatePosted([...datePosted, _event.target.value]);
+    } else {
+      setDatePosted(
+        datePosted.filter((checkbox) => checkbox !== _event.target.value)
+      );
+    }
+  };
+
+  const handleDateChecks = (_event: React.ChangeEvent<HTMLInputElement>) => {
+    const index = datePosted.indexOf(_event.target.value);
+    if (index === -1) {
+      setDatePosted([...datePosted, _event.target.value]);
+    } else {
+      setDatePosted(
+        datePosted.filter((checkbox) => checkbox !== _event.target.value)
+      );
+    }
+  };
+
   return (
     <>
       <FilterCard title='Date Posted'>
-        <Checkbox name='anytime' label='Anytime' />
-        <Checkbox name='today' label='Today' />
-        <Checkbox name='last14days' label='Last 14 days' />
-        <Checkbox name='last30days' label='Last 30 days' />
+        <Checkbox
+          name='anytime'
+          label='Anytime'
+          value=''
+          checked={}
+          onChange={handleJobTypeChecks}
+        />
+        <Checkbox
+          name='today'
+          label='Today'
+          value=''
+          checked={}
+          onChange={handleJobTypeChecks}
+        />
+        <Checkbox
+          name='last14days'
+          label='Last 14 days'
+          value=''
+          checked={}
+          onChange={handleJobTypeChecks}
+        />
+        <Checkbox
+          name='last30days'
+          label='Last 30 days'
+          value=''
+          checked={}
+          onChange={handleJobTypeChecks}
+        />
       </FilterCard>
       <FilterCard title='Type'>
-        <Checkbox name='all' label='All' />
-        <Checkbox name='remote' label='Remote' />
-        <Checkbox name='parttime' label='Part-time' />
-        <Checkbox name='fulltime' label='Full-time' />
-        <Checkbox name='contruct' label='Contract' />
+        <Checkbox
+          name='all'
+          label='All'
+          value=''
+          checked={}
+          onChange={handleDateChecks}
+        />
+        <Checkbox
+          name='remote'
+          label='Remote'
+          value=''
+          checked={}
+          onChange={handleDateChecks}
+        />
+        <Checkbox
+          name='parttime'
+          label='Part-time'
+          value=''
+          checked={}
+          onChange={handleDateChecks}
+        />
+        <Checkbox
+          name='fulltime'
+          label='Full-time'
+          value=''
+          checked={}
+          onChange={handleDateChecks}
+        />
+        <Checkbox
+          name='contruct'
+          label='Contract'
+          value=''
+          checked={}
+          onChange={handleDateChecks}
+        />
       </FilterCard>
       <FilterCard title='Salary (monthly)'>
         <div className='form-control w-full max-w-xs flex-row'>
