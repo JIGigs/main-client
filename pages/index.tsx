@@ -1,20 +1,27 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RadioBtn, SpecialButton, Tab } from '../components';
+import React, { useState } from 'react';
+import { Checkbox, SpecialButton, Tab } from '../components';
 import { HomeTabList } from '../components/HomeTabList';
-import { useForm } from '../hooks';
 import { MainLayout } from '../layouts';
 import { HomeTabListItem, TabItem } from '../types';
 import { Categories, Industry } from '../utilities';
 
 const Home: NextPage = () => {
-  const [values, handleChange] = useForm({
-    keywords: '',
-    remote: '',
-    partTime: '',
-    fullTime: '',
-  });
+  const [keywords, setKeyword] = useState('');
+  const [checkboxes, setCheckboxes] = useState<string[]>([]);
+
+  const handleChecks = (_event: React.ChangeEvent<HTMLInputElement>) => {
+    const index = checkboxes.indexOf(_event.target.value);
+    if (index === -1) {
+      setCheckboxes([...checkboxes, _event.target.value]);
+    } else {
+      setCheckboxes(
+        checkboxes.filter((checkbox) => checkbox !== _event.target.value)
+      );
+    }
+  };
 
   const tabItems: TabItem[] = [
     {
@@ -55,11 +62,11 @@ const Home: NextPage = () => {
             <div className='flex flex-row mb-5'>
               <input
                 type='text'
-                placeholder='Type here'
+                placeholder='Enter search term here'
                 className='input input-bordered w-full bg-jig-300 sm:mr-16'
                 name='keywords'
-                value={values.keywords}
-                onChange={(e) => handleChange}
+                value={keywords}
+                onChange={(e) => setKeyword(e.target.value)}
               />
               <Link href={'#'}>
                 <a className='hidden sm:flex btn btn-outline text-gray-100 border-jig-200 hover:border-gray-300 hover:bg-transparent px-10 py-0 normal-case'>
@@ -83,29 +90,32 @@ const Home: NextPage = () => {
             </div>
             <div className='flex'>
               <div className='form-control flex-row'>
-                <RadioBtn
+                <Checkbox
                   name='remote'
                   label='Remote'
-                  value={values.remote}
+                  value='remote'
                   classes='mr-4'
                   gray
-                  onChange={(e) => handleChange}
+                  checked={checkboxes.includes('remote')}
+                  onChange={handleChecks}
                 />
-                <RadioBtn
+                <Checkbox
                   name='partTime'
                   label='Part-time'
-                  value={values.partTime}
+                  value='parttime'
                   classes='mr-4'
                   gray
-                  onChange={(e) => handleChange}
+                  checked={checkboxes.includes('parttime')}
+                  onChange={handleChecks}
                 />
-                <RadioBtn
+                <Checkbox
                   name='fullTime'
                   label='Full-time'
-                  value={values.fullTime}
+                  value='fulltime'
                   classes='mr-4'
                   gray
-                  onChange={(e) => handleChange}
+                  checked={checkboxes.includes('fulltime')}
+                  onChange={handleChecks}
                 />
               </div>
               <div className='grow'></div>

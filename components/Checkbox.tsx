@@ -1,4 +1,4 @@
-interface IRadioBtn {
+interface ICheckbox {
   name: string;
   label: string;
   checked?: boolean;
@@ -9,7 +9,7 @@ interface IRadioBtn {
   onChange?: (event: any) => void;
 }
 
-export const RadioBtn = ({
+export const Checkbox = ({
   name,
   label,
   checked = false,
@@ -17,8 +17,9 @@ export const RadioBtn = ({
   gray = false,
   value,
   disabled = false,
+  onChange,
   ...props
-}: IRadioBtn) => {
+}: ICheckbox) => {
   return (
     <label
       className={`label cursor-pointer justify-start ${classes}`}
@@ -31,6 +32,7 @@ export const RadioBtn = ({
         value={value}
         disabled={disabled}
         className={`checkbox ${gray && 'border-gray-100'} rounded-none w-4 h-4`}
+        onChange={onChange}
       />
       <span className={`label-text ${gray && 'text-gray-100'} pl-3`}>
         {label}

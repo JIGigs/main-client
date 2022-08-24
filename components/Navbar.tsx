@@ -64,7 +64,7 @@ export const Navbar: React.FC<Props> = ({ user }) => {
                     <path d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z' />
                   </svg>
                 </a>
-                <ul className='p-2 bg-jig-500 font-semibold'>
+                <ul className='p-2 bg-jig-500 font-semibold shadow-md shadow-jig-200'>
                   <li className='hover:bg-jig-900'>
                     <Link href='/career/advice'>
                       <a>Career Adivce</a>

@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { JobCard, JobFilterContent } from '../../components';
@@ -8,10 +7,11 @@ import { MainLayout } from '../../layouts';
 const Jobs: NextPage = () => {
   const [sortValue, setSortValue] = useState('Date');
   const [showFilterForm, setShowFilterForm] = useState(false);
+  const [jobTitle, setJobTitle] = useState('');
+  const [location, setLocation] = useState('');
 
   const showFilter = () => {
     setShowFilterForm(!showFilterForm);
-    console.log('yess');
   };
 
   return (
@@ -24,12 +24,16 @@ const Jobs: NextPage = () => {
               placeholder='Job title, skills'
               className='input input-bordered w-full bg-jig-300 mb-5 sm:mb-0 sm:mr-5 md:mr-16'
               name='keywords'
+              value={jobTitle}
+              onChange={(e) => setJobTitle(e.target.value)}
             />
             <input
               type='text'
               placeholder='Location'
               className='input input-bordered w-full bg-jig-300 sm:mr-0 md:mr-16'
               name='keywords'
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
             />
             <Link href={'#'}>
               <a className='hidden md:flex btn btn-outline text-gray-100 border-jig-200 hover:border-gray-300 hover:bg-transparent px-10 py-0 normal-case'>
