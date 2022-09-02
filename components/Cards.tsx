@@ -97,7 +97,11 @@ export const JobCard = ({
         </div>
         <p className='-mt-2 text-sm text-gray-400 flex justify-between'>
           {datePosted && <span>Posted on {datePosted}</span>}
-          {type && <span className='text-right'>{type}</span>}
+          {type && (
+            <span className='text-right bg-jig-100 px-2 rounded-sm text-jig-700 font-medium border border-gray-300'>
+              {type}
+            </span>
+          )}
         </p>
         <p className='text-sm flex flex-col sm:flex-row justify-between'>
           {location && (
